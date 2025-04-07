@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Digital</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Jurnal Digital</h1>
+
+    <!-- Form untuk entri baru -->
+    <form action="/add-entry" method="POST">
+        <textarea name="entry" placeholder="Tulis entri jurnal di sini..." required></textarea>
+        <button type="submit">Tambah Entri</button>
+    </form>
+
+    <!-- Menampilkan entri jurnal -->
+    <ul>
+        <% entries.forEach(entry => { %>
+            <li>
+                <%= entry.content %> (Ditulis pada: <%= entry.created_at %>)  
+                <a href="/edit/<%= entry.id %>">✏️ Edit</a> |  
+                <a href="/delete/<%= entry.id %>" onclick="return confirm('Yakin ingin menghapus entri ini?')">🗑️ Hapus</a>
+            </li>
+        <% }); %>
+    </ul>
+    
+</body>
+</html>

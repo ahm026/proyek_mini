@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Entri Jurnal</title>
+</head>
+<body>
+    <h1>Edit Entri</h1>
+    <form action="/update/<%= entry.id %>" method="POST">
+        <textarea name="content" required><%= entry.content %></textarea>
+        <button type="submit">Simpan Perubahan</button>
+    </form>
+    <br>
+    <a href="/">⬅ Kembali</a>
+</body>
+</html>
